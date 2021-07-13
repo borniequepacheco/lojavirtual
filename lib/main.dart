@@ -1,9 +1,9 @@
-import 'package:firebase_core/firebase_core.dart';
+//import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+//import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:lojavirtual/screens/base/base_screen.dart';
 
-void main() async {
+void main() {
   runApp(MyApp());
 
   //main firebase
