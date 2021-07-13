@@ -7,9 +7,43 @@ void main() async {
 
   await Firebase.initializeApp();
 
-  FirebaseFirestore.instance
+  //Gravação banco
+  /* FirebaseFirestore.instance
       .collection('pedidos')
-      .add({'preco': 19.90, 'usuario': 'Bornieque'});
+      .doc('teste')
+      .update({'usuario': 'Bornieque B M Pacheco'}); */
+
+  //consulta banco e print
+  //DocumentSnapshot document =
+  //    await FirebaseFirestore.instance.collection('pedidos').doc('teste').get();
+
+  //print(document.data());
+
+  //imprimir document após update
+  /* FirebaseFirestore.instance
+      .collection('pedidos')
+      .doc('teste')
+      .snapshots()
+      .listen((document) {
+    print(document.data());
+  }); */
+
+  //Buscar itens de coleção
+/*   QuerySnapshot snapshot =
+      await FirebaseFirestore.instance.collection('pedidos').get();
+  for (DocumentSnapshot document in snapshot.docs) {
+    print(document.data());
+  } */
+
+  //Ler documentos após inserir ou atualizar algum
+  /*  FirebaseFirestore.instance
+      .collection('pedidos')
+      .snapshots()
+      .listen((snapshot) {
+    for (DocumentSnapshot document in snapshot.docs) {
+      print(document.data());
+    }
+  }); */
 }
 
 class MyApp extends StatelessWidget {
