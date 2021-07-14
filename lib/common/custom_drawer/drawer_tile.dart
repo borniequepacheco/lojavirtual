@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:lojavirtual/models/page_manager.dart';
+import 'package:provider/provider.dart';
 
 class DrawerTile extends StatelessWidget {
   const DrawerTile(
@@ -10,8 +12,12 @@ class DrawerTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final int curPage = context.watch<PageManager>().pageNumber;
+
     return InkWell(
-        onTap: () {},
+        onTap: () {
+          context.read<PageManager>().setPage(page);
+        },
         child: SizedBox(
           height: 60,
           child: Row(
@@ -23,14 +29,14 @@ class DrawerTile extends StatelessWidget {
                 child: Icon(
                   iconData,
                   size: 32,
-                  color: Colors.grey[700],
+                  color: curPage == page ? Colors.red : Colors.grey[700],
                 ),
               ),
               Text(
                 title,
                 style: TextStyle(
                   fontSize: 16,
-                  color: Colors.grey[700],
+                  color: curPage == page ? Colors.red : Colors.grey[700],
                 ),
               ),
             ],

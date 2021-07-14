@@ -27,7 +27,7 @@ dependencies:
   firebase_storage: ^9.0.0
   flutter:
     sdk: flutter
-
+  provider: ^5.0.0
     
       
 
